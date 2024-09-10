@@ -26,7 +26,7 @@ ThirdPlace is an app dedicated to solving the <a href="https://en.wikipedia.org/
 
 #### Clone the repository
             https://github.com/ALLHUBS-Jan-2024-Liftoff/Cherry-Systems.git
-#### In your terminal install npm dependencies
+#### In the UI directory install npm dependencies
             npm install
 
 ### Google Maps API Key Setup
