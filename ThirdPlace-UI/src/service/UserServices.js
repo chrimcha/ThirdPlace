@@ -62,6 +62,8 @@ export const registerUser = async (username, email, verifyEmail, password, verif
     // Add all "defaultMessage" from error response to empty array to be logged in console
     for (let i = 0; i < errorData.length; i++) {  
       allDefaultMessages.push(errorData[i].defaultMessage);
+
+      alert(errorData[i].defaultMessage);
     }
 
     console.error("Error registering new user!", allDefaultMessages);

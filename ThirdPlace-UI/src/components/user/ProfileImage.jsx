@@ -13,11 +13,11 @@ const ProfileImage = ({otherUser}) => {
 
     const propOtherUser = otherUser;
 
-    const [selectedUserImg, setSelectedUser] = useState(user.profileImage);
+    const [selectedUserImg, setSelectedUserImg] = useState(user.profileImage);
 
     useEffect(() => {
         if (propOtherUser) {
-            setSelectedUser(propOtherUser.profileImage)
+            setSelectedUserImg(propOtherUser.profileImage)
         }
         currentProfileImage();
     }, [propOtherUser]);
