@@ -404,6 +404,46 @@ small.register {
   border-color: #cacaca;
 }
 
+/* For Edit User Info in Profile Page */
+.edit-user-info-card {
+  background-color: #F2F5F5;
+  min-width: 575px;
+  padding: 42px 42px;
+  /* margin: 1.6rem 1rem; */
+  border-radius: 32px;
+}
+
+/* For Edit User Info in Profile Page */
+.form-label-img {
+  margin: 5px 5px;
+  border: solid;
+  border-color: #e0e0e0;
+  border-width: 1px;
+  border-radius: 100%;
+}
+
+/* For Edit User Info in Profile Page */
+.form-control {
+  width: 100%;
+}
+
+/* For Edit User Info in Profile Page */
+.form-label {
+  width: 100%;
+}
+
+.edit-user-info-show-password {
+  display: flex;
+  justify-content: right;
+}
+
+.form-group-profile-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 4px;
+}
+
 /* For Submission page */
 .submitted-date-in-reviews {
   margin: 0rem 12rem;
