@@ -145,7 +145,7 @@ const UpdateUserForm = () => {
                                     name='profileImage'
                                     onChange={(e) => setProfileImage(e.target.value)}
                                     />
-                                    <label htmlFor={0}><img src={plant0} className="form-label-img"/></label>{"\t"} 
+                                    <label htmlFor={"defaultImage"}><img src={plant0} className="form-label-img"/></label>{"\t"} 
                                 </div>
                                 <div>
                                 <input 
@@ -156,7 +156,7 @@ const UpdateUserForm = () => {
                                     name='profileImage'
                                     onChange={(e) => setProfileImage(e.target.value)}
                                     />
-                                    <label htmlFor={1}><img src={plant1} className="form-label-img"/></label>{"\t"} 
+                                    <label htmlFor={"profileImage1"}><img src={plant1} className="form-label-img"/></label>{"\t"} 
                                 </div>
                                 <div>
                                 <input 
@@ -167,7 +167,7 @@ const UpdateUserForm = () => {
                                     name='profileImage'
                                     onChange={(e) => setProfileImage(e.target.value)}
                                     />
-                                    <label htmlFor={2}><img src={plant2} className="form-label-img"/></label>{"\t"} 
+                                    <label htmlFor={"profileImage2"}><img src={plant2} className="form-label-img"/></label>{"\t"} 
                                 </div>
                                 <div>
                                 <input 
@@ -178,7 +178,7 @@ const UpdateUserForm = () => {
                                     name='profileImage'
                                     onChange={(e) => setProfileImage(e.target.value)}
                                     />
-                                    <label htmlFor={3}><img src={plant3} className="form-label-img"/></label>{"\t"}
+                                    <label htmlFor={"profileImage3"}><img src={plant3} className="form-label-img"/></label>{"\t"}
                                 </div>
                                 <div>
                                 <input 
@@ -189,7 +189,7 @@ const UpdateUserForm = () => {
                                     name='profileImage'
                                     onChange={(e) => setProfileImage(e.target.value)}
                                     />
-                                    <label htmlFor={4}><img src={plant4} className="form-label-img"/></label>{"\t"}
+                                    <label htmlFor={"profileImage4"}><img src={plant4} className="form-label-img"/></label>{"\t"}
                                 </div>
                                 <div>
                                 <input 
@@ -200,7 +200,7 @@ const UpdateUserForm = () => {
                                     name='profileImage'
                                     onChange={(e) => setProfileImage(e.target.value)}
                                     />
-                                <label htmlFor={5}><img src={plant5} className="form-label-img"/></label>{"\t"}
+                                <label htmlFor={"profileImage5"}><img src={plant5} className="form-label-img"/></label>{"\t"}
                                 </div>
                             </div>
                         </label>
