@@ -37,6 +37,11 @@ small.register {
   margin: 0px .50rem 0px 4.8rem;
 }
 
+/* For Login and Sign Up Pages */
+p.login-sign-up-page {
+ margin-bottom: 0px;
+}
+
 .link-css {
   color: black;
   text-decoration: none;
