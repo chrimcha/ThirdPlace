@@ -432,16 +432,24 @@ small.register {
   width: 100%;
 }
 
+/* For Edit User Info in Profile Page */
 .edit-user-info-show-password {
   display: flex;
   justify-content: right;
 }
 
+/* For Edit User Info in Profile Page */
 .form-group-profile-img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 4px;
+}
+
+/* For Edit User Info in Profile Page */
+.edit-info-submit-delete-button-div {
+  display: flex;
+  justify-content: center;
 }
 
 /* For Submission page */

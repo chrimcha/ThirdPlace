@@ -205,14 +205,18 @@ const UpdateUserForm = () => {
                             </div>
                         </label>
                     </div>
+                    
+                    <br/>
 
-                    <button type="submit" className="submit-button">
-                        Save
-                    </button>
+                    <div className='edit-info-submit-delete-button-div'>
+                        <button type="submit" className="submit-button">
+                            Save
+                        </button>
+                        <button type="submit" className="delete-button" onClick={() => {setEditMode(false)}}>
+                            Cancel
+                        </button>
+                    </div>
                 </form>
-                    <button type="submit" className="delete-button" onClick={() => {setEditMode(false)}}>
-                        Cancel
-                    </button>
             </section>) : (
                 <ProfileInfoCard/>
             )}
