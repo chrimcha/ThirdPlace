@@ -334,7 +334,7 @@ small.register {
   border-radius: 32px;
 }
 
-/* For Profile and Submit Location page when not signed in */
+/* For Profile page when not signed in */
 .review-card-no-user-profile {
   text-align: right;
   background-color: #F2F5F5;
@@ -345,7 +345,7 @@ small.register {
   min-width: 527px;
 }
 
-/* For Profile and Submit Location page when not signed in */
+/* For Submit Location page when not signed in */
 .review-card-no-user-submit-location {
   text-align: right;
   background-color: #F2F5F5;
