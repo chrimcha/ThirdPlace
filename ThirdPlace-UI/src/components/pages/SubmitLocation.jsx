@@ -43,7 +43,7 @@ export default function SubmitLocation() {
             <Navbar />
             {user === null ? (
             <div className="update-submission-form-padding">
-            <section className='review-card-no-user-profile-submit-location'>
+            <section className='review-card-no-user-submit-location'>
                 <h1>Log in to submit a location!</h1>
                 <br />
                 <p>

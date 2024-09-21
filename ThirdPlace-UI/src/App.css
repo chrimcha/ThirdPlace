@@ -31,9 +31,15 @@ small.login {
   margin: 0px .50rem 0px 5.2rem;
 }
 
+/* For Register hide password text */
 small.register {
   color: rgb(98, 98, 98);
   margin: 0px .50rem 0px 4.8rem;
+}
+
+/* For Login and Sign Up Pages */
+p.login-sign-up-page {
+ margin-bottom: 0px;
 }
 
 .link-css {
@@ -333,12 +339,23 @@ small.register {
   border-radius: 32px;
 }
 
-/* For Profile and Submit Location page when not signed in */
-.review-card-no-user-profile-submit-location {
+/* For Profile page when not signed in */
+.review-card-no-user-profile {
   text-align: right;
   background-color: #F2F5F5;
-  padding: 42px 42px;
-  margin: 1.6rem 0rem;
+  padding: 3rem 4rem 2.5rem 2rem;
+  margin: 2rem auto;
+  border-radius: 32px;
+  max-width: 527px;
+  min-width: 527px;
+}
+
+/* For Submit Location page when not signed in */
+.review-card-no-user-submit-location {
+  text-align: right;
+  background-color: #F2F5F5;
+  padding: 3rem 3rem 2rem 2rem;
+  margin: 2rem auto;
   border-radius: 32px;
   max-width: 527px;
   min-width: 527px;
@@ -390,6 +407,54 @@ small.register {
   border-top-style: double;
   border-width: 2px;
   border-color: #cacaca;
+}
+
+/* For Edit User Info in Profile Page */
+.edit-user-info-card {
+  background-color: #F2F5F5;
+  min-width: 575px;
+  padding: 42px 42px;
+  /* margin: 1.6rem 1rem; */
+  border-radius: 32px;
+}
+
+/* For Edit User Info in Profile Page */
+.form-label-img {
+  margin: 5px 5px;
+  border: solid;
+  border-color: #e0e0e0;
+  border-width: 1px;
+  border-radius: 100%;
+}
+
+/* For Edit User Info in Profile Page */
+.form-control {
+  width: 100%;
+}
+
+/* For Edit User Info in Profile Page */
+.form-label {
+  width: 100%;
+}
+
+/* For Edit User Info in Profile Page */
+.edit-user-info-show-password {
+  display: flex;
+  justify-content: right;
+}
+
+/* For Edit User Info in Profile Page */
+.form-group-profile-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 4px;
+}
+
+/* For Edit User Info in Profile Page */
+.edit-info-submit-delete-button-div {
+  display: flex;
+  justify-content: center;
 }
 
 /* For Submission page */

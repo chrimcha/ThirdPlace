@@ -122,7 +122,7 @@ const AddUserForm = () => {
                 </button>
             </form>
 
-            <p>Already have an account? <Link className='link-css-login-register' to="/Login">Login</Link></p>
+            <p className='login-sign-up-page'>Already have an account? <Link className='link-css-login-register' to="/Login">Login</Link></p>
         </>
     )
 }

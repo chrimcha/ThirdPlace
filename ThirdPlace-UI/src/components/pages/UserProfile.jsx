@@ -65,7 +65,7 @@ export default function UserProfile() {
     <div>
         <Navbar/>
         {user === null ? (
-          <section className='review-card-no-user-profile-submit-location'>
+          <section className='review-card-no-user-profile'>
               <h1>Log in to see Profile page!</h1>
               <br />
               <p>
