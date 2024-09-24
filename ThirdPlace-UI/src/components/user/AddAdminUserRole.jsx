@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
-import { useAuth } from '../../context/AuthContext'
+import { changeRoleToAdmin } from '../../service/UserServices';
 
 export const AddAdminUserRole = () => {
-    const {user} = useAuth();
-    const [adminRole, setAdminRole] = useState();
+    const [password, setPassword] = useState("");
+    
+    const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            // await changeRoleToAdmin(username, email, password);
-            // window.location.reload(); // Reload to update context
+            await changeRoleToAdmin(password);
+            window.location.reload(); // Reload to update context
             setError('');
-            // alert(`Role has been changed to: Admin`);
-            // window.location.href = "/";
+            alert(`Role has been changed to: Admin`);
         } catch (error) {
-            setError('Failed to login. Please try again!');
+            setError('Password incorrect. Please try again!');
         }
 
     };
@@ -24,25 +24,25 @@ export const AddAdminUserRole = () => {
         <>
         
         <div className='review-card'>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label className="form-label">
                         Enter password to change role to Admin
                         <br/>
                         <br/>
                         <input 
-                        type='text'
+                        type='password'
                         className="form-control"
                         name='password'
                         autoComplete='off'
-                        value={adminRole}
-                        onChange={(e) => setAdminRole(e.target.value)}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                         />
                     </label>
-                    <br/>
+                    <p>{error}</p>
                     <button type="submit" className="submit-button-register">
-                    Submit
+                    Change Role
                 </button>
                 </div>
             </form>
