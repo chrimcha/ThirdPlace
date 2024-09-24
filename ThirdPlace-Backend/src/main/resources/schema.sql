@@ -19,7 +19,8 @@ CREATE TABLE IF NOT EXISTS users (
     pw_Hash VARCHAR(255) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     cherry_points INT DEFAULT 0,
-    profile_image INT DEFAULT 0 CHECK (profile_image BETWEEN 0 AND 6)
+    profile_image INT DEFAULT 0 CHECK (profile_image BETWEEN 0 AND 6),
+    role VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS categories (
