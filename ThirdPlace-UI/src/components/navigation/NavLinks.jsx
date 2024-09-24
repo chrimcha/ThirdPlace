@@ -42,6 +42,10 @@ export default function NavLinks() {
                         <Link to={{ pathname: '/profile', state: { user, isAuthenticated }}} className="nav-item">{user.username}'s Profile</Link>
                     </li>
 
+                    <li className="nav-item">
+                        <Link to={{ pathname: '/admindashboard', state: { user, isAuthenticated }}} className="nav-item">⚙️</Link>
+                    </li>
+
                     <Link to={{ pathname: '/', state: { user, isAuthenticated }}}>
                         <button className="navbar-button" onClick={handleSubmit}>Logout</button>
                     </Link>

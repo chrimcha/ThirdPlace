@@ -13,6 +13,7 @@ import Submission from "./components/pages/Submission.jsx";
 import SearchAndList from "./components/pages/SearchAndList.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import OthersUserProfile from "./components/pages/OthersUserProfile.jsx";
+import { AdminDashboard } from "./components/pages/AdminDashboard.jsx";
 
 
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: '/searchandlist',
     element: <SearchAndList/>,
+  },
+  {
+    path: '/admindashboard',
+    element: <AdminDashboard/>,
   }
 ]);
 
