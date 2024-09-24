@@ -720,3 +720,45 @@ button:active {
 .update-submission-form-padding {
   padding: 0px 350px;
 }
+
+/* For Admin Dashboard ====================== Start ====================== */
+.admin-titles {
+  color: white;
+}
+
+.admin-tables {
+  background-color: #622386;
+  padding: 42px 42px;
+  margin: 1.6rem 0rem;
+  border-radius: 32px;
+}
+
+.thread {
+  background-color: #622386;
+  color: white;
+  border: solid;
+  border-width: 1px;
+}
+
+.table {
+  border: solid;
+  border-width: 1px;
+  border-color: #622386;
+}
+
+.table-data-buttons {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.modify-th {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.table-th {
+  border: inset;
+}
+/* For Admin Dashboard ======================= End ======================= */

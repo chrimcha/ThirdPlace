@@ -86,8 +86,8 @@ export default function ProfileInfoCard({otherUser}) {
                       )}
                     </tr>
                     <tr>
-                      <th scope="row">Password:</th>
-                      <td>*******</td>
+                      <th scope="row">Role:</th>
+                      <td>{user.role}</td>
                     </tr>
                   </tbody>
                 </table>
