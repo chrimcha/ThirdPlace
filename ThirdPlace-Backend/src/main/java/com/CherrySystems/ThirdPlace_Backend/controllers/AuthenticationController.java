@@ -1,12 +1,8 @@
 package com.CherrySystems.ThirdPlace_Backend.controllers;
 
-import com.CherrySystems.ThirdPlace_Backend.models.Category;
-import com.CherrySystems.ThirdPlace_Backend.models.Submission;
 import com.CherrySystems.ThirdPlace_Backend.models.User;
-import com.CherrySystems.ThirdPlace_Backend.models.dto.ChangeUserRoleToAdminDTO;
 import com.CherrySystems.ThirdPlace_Backend.models.dto.LoginFormDTO;
 import com.CherrySystems.ThirdPlace_Backend.models.dto.RegistrationFormDTO;
-import com.CherrySystems.ThirdPlace_Backend.models.dto.SubmissionFormDTO;
 import com.CherrySystems.ThirdPlace_Backend.repositories.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -15,15 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/api/user")
@@ -267,39 +259,6 @@ public class AuthenticationController {
 
             userRepository.save(userToUpdate);
             return ResponseEntity.ok("User successfully updated!");
-        }
-    }
-
-//    Change User role to Admin
-    @PostMapping("/roleToAdmin")
-    public ResponseEntity<?> updateUserRoleToAdmin(@RequestBody @Valid ChangeUserRoleToAdminDTO changeUserRoleToAdminDTO,
-                                                   Errors errors, HttpSession session) {
-
-        if (errors.hasErrors()) {
-            return ResponseEntity.badRequest().body(errors.getAllErrors());
-        }
-
-        // Get User from session
-        User userToUpdate = getUserFromSession(session);
-
-        // Get password from form
-        String password = changeUserRoleToAdminDTO.getPassword();
-
-        // Collect errors
-        if (password.isEmpty()) {
-            errors.rejectValue("password", "password.isEmpty", "Password is required.");
-        } else if (!password.equals("adminPassword")) {
-            errors.rejectValue("password", "password.incorrect", "Password is incorrect.");
-        }
-
-        // If no errors, save updated User to database
-        if (errors.hasErrors()) {
-            return ResponseEntity.badRequest().body(errors.getAllErrors());
-        } else {
-            userToUpdate.setRole("Admin");
-
-            userRepository.save(userToUpdate);
-            return ResponseEntity.ok("User role successfully updated!");
         }
     }
 }

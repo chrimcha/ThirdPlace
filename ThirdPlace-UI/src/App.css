@@ -673,7 +673,6 @@ button:active {
   color: white;
   border: solid;
   border-width: 1px;
-  border-color: #622386;
 }
 
 .table {
@@ -682,13 +681,19 @@ button:active {
   border-color: #622386;
 }
 
-.table-data {
-  
-}
-
 .table-data-buttons {
   display: flex;
   justify-content: center;
   border: none;
+}
+
+.modify-th {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.table-th {
+  border: inset;
 }
 /* For Admin Dashboard ======================= End ======================= */

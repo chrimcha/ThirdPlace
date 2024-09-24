@@ -117,32 +117,3 @@ export const deleteUser = async (userId) => {
     throw error;
   }
 };
-
-// Change current users role to Admin
-export const changeRoleToAdmin = async (password) => {
-  const userData = {
-    password
-  };
-
-  try {
-    const response = await axios.post(`${BASEAPIURL}/roleToAdmin`, userData, {
-      headers: { 'Content-Type': 'application/json' },
-      withCredentials: true
-    });
-    console.log("Update User Role Response: ", response.data, response.status);
-    return response.data;
-  } catch (error) {
-    const errorData = error.response.data;
-    let allDefaultMessages = [];
-
-    // Add all "defaultMessage" from error response to empty array to be logged in console
-    for (let i = 0; i < errorData.length; i++) {  
-      allDefaultMessages.push(errorData[i].defaultMessage);
-
-      alert(errorData[i].defaultMessage);
-    }
-
-    console.error("Error updating current user!", allDefaultMessages);
-    throw error;
-  }
-};
