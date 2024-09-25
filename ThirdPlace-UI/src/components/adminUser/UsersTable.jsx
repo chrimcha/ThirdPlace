@@ -1,18 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { deleteUser, fetchUsers } from '../../service/UserServices';
 
-export const UsersTable = ({props}) => {
+export const UsersTable = () => {
 
-    const userList = props;
+    const [userList, setUserList] = useState([]);
 
-    // const [userList, setUserList] = useState();
+    useEffect(() => {
+        fetchUsers()
+        .then(setUserList)
+        .catch((e) => { 
+            console.error("Error fetching user data", e)
+        });
+    }, []);
 
-    // useEffect(() => {
-    //     fetchUsers()
-    //     .then(setUserList)
-    //     .catch((e) => { 
-    //         console.error("Error fetching user data", e)
-    //     });
-    // }, []);
+    const handleUpdate = async (e) => {
+        e.preventDefault();
+    
+        if (!confirm(`Would you like to edit user: ${user.username}?`)) {
+          // Cancel is clicked
+            e.preventDefault();
+            alert('Cancelled: User will NOT be edited!');
+        } else {
+          // Ok is clicked
+            setEditMode(true);
+        }
+    };
 
     return (
         <>
@@ -36,12 +48,46 @@ export const UsersTable = ({props}) => {
                             <th scope='row'>{userInList.cherryPoints}</th>
                             <th scope='row'>{userInList.role}</th>
                             <td className='table-data-buttons'>
-                                <button className="submit-button" onClick={() => deleteTodo(todo.id)}>
+                            <button 
+                                className="submit-button" 
+                                onClick={async (e) => 
+                                    {if (!confirm(`Would you like to edit user: ${userInList.username}?`)) {
+                                        // Cancel is clicked
+                                            e.preventDefault();
+                                            alert('Cancelled: User will NOT be edited!');
+                                        } else {
+                                        // Ok is clicked
+                                            window.location.href = "/profile";
+                                            setEditMode(true);
+                                        }
+                                    }
+                                }>
                                 Edit
-                                </button>
-                                <button className="delete-button" onClick={() => deleteTodo(todo.id)}>
+                            </button>
+                            <button
+                                className="delete-button"
+                                value={userInList.id}
+                                onClick={async (e) => 
+                                    {if (!confirm(`Are you sure you want to delete user: ${userInList.username}?`)) {
+                                        // Cancel is clicked
+                                            e.preventDefault();
+                                            alert('Cancelled: User was NOT deleted!');
+                                        } else {
+                                        // Ok is clicked
+                                            try {
+                                            await deleteUser(userInList.id);
+                                            alert(`${userInList.username} has been deleted!`);
+                                            window.location.reload();
+                                            } catch (error) {
+                                            console.error('Failed to delete user!', error);
+                                            throw error;
+                                            }
+                                        }
+                                    }
+                                }
+                                >
                                 Delete
-                                </button>
+                            </button>
                             </td>
                         </tr>
                     ))}
