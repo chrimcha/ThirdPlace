@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { deleteUser, fetchUsers } from '../../service/UserServices';
+import { Link } from 'react-router-dom';
 
 export const UsersTable = () => {
 
@@ -42,7 +43,9 @@ export const UsersTable = () => {
                     {userList.map((userInList) => (
                         <tr key={userInList.id}>
                             <th scope='row'>{userInList.id}</th>
-                            <th scope='row'>{userInList.username}</th>
+                            <th scope='row'>
+                                <Link className="link-css" to={`../profile/${userInList.username}`}> {userInList.username}</Link>
+                            </th>
                             <th scope='row'>{userInList.email}</th>
                             <th scope='row'>{userInList.profileImage}</th>
                             <th scope='row'>{userInList.cherryPoints}</th>
@@ -58,7 +61,6 @@ export const UsersTable = () => {
                                         } else {
                                         // Ok is clicked
                                             window.location.href = "/profile";
-                                            setEditMode(true);
                                         }
                                     }
                                 }>

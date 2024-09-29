@@ -15,11 +15,11 @@ export default function NavLinks() {
 
         <ul className="navbar-nav me-auto mb-2 mb-lg-0 p-1">
 
-            {!user ? (
-                <>
                     <li className="nav-item">
                         <Link to={{ pathname: '/SearchAndList', state: { user, isAuthenticated }}} className="nav-item">View Locations</Link>
                     </li>
+            {!user ? (
+                <>
 
                     <li className="nav-item">
                         <Link to={{ pathname: '/login', state: { user, isAuthenticated }}} className="nav-item">Login</Link>
@@ -31,9 +31,6 @@ export default function NavLinks() {
                 </>
             ) : (
                 <>
-                    <li className="nav-item">
-                        <Link to={{ pathname: '/SearchAndList', state: { user, isAuthenticated }}} className="nav-item">View Locations</Link>
-                    </li>
                     <li className="nav-item">
                         <Link to={{ pathname: '/submitlocation', state: { user, isAuthenticated }}} className="nav-item">Submit Location</Link>
                     </li>

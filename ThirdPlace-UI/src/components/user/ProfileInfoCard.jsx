@@ -87,7 +87,11 @@ export default function ProfileInfoCard({otherUser}) {
                     </tr>
                     <tr>
                       <th scope="row">Role:</th>
-                      <td>{user.role}</td>
+                      {propOtherUser ? (
+                        <td>{propOtherUser.role}</td>
+                      ) : (
+                        <td>{user.role}</td>
+                      )}
                     </tr>
                   </tbody>
                 </table>
