@@ -1,11 +1,8 @@
 package com.CherrySystems.ThirdPlace_Backend.controllers;
 
-import com.CherrySystems.ThirdPlace_Backend.models.Category;
-import com.CherrySystems.ThirdPlace_Backend.models.Submission;
 import com.CherrySystems.ThirdPlace_Backend.models.User;
 import com.CherrySystems.ThirdPlace_Backend.models.dto.LoginFormDTO;
 import com.CherrySystems.ThirdPlace_Backend.models.dto.RegistrationFormDTO;
-import com.CherrySystems.ThirdPlace_Backend.models.dto.SubmissionFormDTO;
 import com.CherrySystems.ThirdPlace_Backend.repositories.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -14,15 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/api/user")
@@ -108,7 +101,7 @@ public class AuthenticationController {
             if (errors.hasErrors()) {
                 return ResponseEntity.badRequest().body(errors.getAllErrors());
             } else {
-                User newUser = new User(username, email, password, 0, 0);
+                User newUser = new User(username, email, password, 0, 0, "Basic");
                 setUserInSession(request.getSession(), newUser);
                 userRepository.save(newUser);
 

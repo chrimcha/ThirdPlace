@@ -38,7 +38,7 @@ export const getUserByUsername = async (username) => {
   };
 };
 
-
+// Register new user
 export const registerUser = async (username, email, verifyEmail, password, verifyPassword) => {
   const userData = {
     username,
@@ -71,6 +71,7 @@ export const registerUser = async (username, email, verifyEmail, password, verif
   }
 };
 
+// Update current user info
 export const updateUser = async (username, email, verifyEmail, password, verifyPassword, profileImage) => {
   const userData = {
     username,
@@ -86,7 +87,7 @@ export const updateUser = async (username, email, verifyEmail, password, verifyP
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true
     });
-    console.log("Registration Response: ", response.data, response.status);
+    console.log("Update User Response: ", response.data, response.status);
     return response.data;
   } catch (error) {
     const errorData = error.response.data;
@@ -104,6 +105,7 @@ export const updateUser = async (username, email, verifyEmail, password, verifyP
   }
 };
 
+// Delete current user
 export const deleteUser = async (userId) => {
   try {
     await axios.post(`${BASEAPIURL}/delete`, null, {
